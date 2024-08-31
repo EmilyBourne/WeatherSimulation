@@ -1,0 +1,52 @@
+﻿Question P1.1] Comment représentez-vous ces vecteurs ? Comment sont-ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ?
+
+Les vecteurs sont représentés par 2 doubles. Celles sont en private et peuvent être accédé par des méthodes set et get. On a aussi des méthodes suivantes:
+	set_valeurs-permet de définir le x et y au même temps.
+	affiche
+	compare[Question P3.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+
+On n'a pas ajouté un constructeur de copie. Le méthode par défaut fonctionne très bien.[Question P3.2] Pourquoi, contrairement à ce qui est trop souvent fait, l'écriture des deux premiers constructeurs avec une seule méthode en utilisant des valeurs par défaut aux arguments n'est-elle pas une très bonne idée ?
+
+Ce n'est pas une très bonne idée car cela permet de ne donner qu'une valeur pour définir le Vecteur, ce qui n'est pas adapté à la classe vecteur2D, vu qu'il n'y aucun raison de préfèrer une initialisation de x sur une initialisation de y.[Question P3.3] Si l'on souhaitait ajouter un constructeur par coordonnées polaires (un angle et une longueur),a] que cela impliquerait-il au niveau des attributs de la classe ?b] quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
+
+a] comme c'est possible de changer entre coordonnées polaires et cartésiens, ceci ne changerait rien au niveau des attributs mais il y aura des calculs complexes à faire pour les méthodes get et set qui sont utilisés pour accéder au coordonnées polaires.
+b] Le constructeur pour les coordonnées polaires serait pareil que celui pour les coordonnées cartésiens, du coup c'est impossible à différencier les deux.[Question P3.4] Quels opérateurs avez vous introduits ?
+
+On a introduit les opérateurs suivantes:
+	==
+	!=
+	<<
+	+
+	-
+	*
+	/
+On n'a pas introduit des opérateurs de la forme op= car ni moi ni mon binôme a l'habitude de les utiliser dans nos codes donc ça ne nous apporte pas grande chose.[Question P6.1] A ce stade, quels sont les attributs, méthodes et constructeurs de votre classe ChampPotentiel ?Pour l'instant, les attributs du ChampPotentiels sont le nombre de cubes dans chaque direction (x,y,z) et l'échantillonage. Cette disposition semblait être la plus naturelle et permet de définir le nombre de cubes avec des entiers et l'échantillonage en double. Ceci permet d'avoir moins de variables et des variables plus simples (int plutot que double) La seule methode existant pour l'instant est un constructeur. Il n'y a pas de constructeur par défaut car pour l'instant un ChampPotentiel par défaut n'a pas de sens.[Question P7.1] Dans votre conception, la méthode iteration est-elle public, protected ou private ?La methode itération est private, car elle n'est utile que dans le cadre d'autres methodes de ChampPotentiels.Elle n'est pas utile à l'exterieur du ChampPotentiels. Cela pourait facilement être utilisé a mauvais escient.[Question P7.2]  Dans votre conception, comment/où est représenté le paramètre ε de l'équation (6) ?ε est un paramètre de la methode résolution et de la methode iteration.[Question P7.3]  Dans votre conception, les méthodes resolution et vitesse sont-elles public, protected ou private ?	Justifiez votre réponse.Resolution et vitesse sont pour l'instant public car on peut en avoir besoin en hors de la classe. (Par exemple pour la classe Ciel (P8.1)) [Question P8.1] Que vous inspire le paragraphe précédent ? Cela introduit-il d'autres classe ? Cela modifie-t-il votre conception précédente ? Si oui, comment et pourquoi ?
+Ceci ne nous inspire pas.
+N.B. Maintenant qu'on a vu le concept de l'héritage on voit qu'on aurait pu créer une super classe qui s'appellait Boite et contenait tous les aspects du monde, c'est à dire: Nx, Ny, Nz, et lambda.
+N.B. Maintenant qu'on a un namespace Proprietes qui contient toutes ces valeurs, la classe Boite n'aurait servi à rien.[Question P8.2] Parmi les grandeurs citées ci-dessus, lesquelles représentez vous sous forme d'attributs et lesquelles sous forme de méthodes ?
+
+On a les grandeurs suivants en attributs :
+double v2;
+	enthalpie par unité de masse
+	Temperature
+	Pression
+	Pression partielle de vapeur d'eau
+	Pression de vapeur saturée d'eau
+	[Question P9.1] En termes de POO, quelle est donc la nature de la méthode dessine ?
+
+[Question P9.2] Quelle est la conséquence pour l'opérateur << ? Comment décidez-vous d'implémenter cela ?
+
+[Question P10.1] Comment représentez vous la classe Systeme ? Expliquez votre conception (attributs, interface, ...). Expliquez en particulier comment vous gérez le fait que le Ciel doit être construit «plus tard» une fois les potentiels calculés.La classe systeme possède en attributs des pointeurs sur les composants de la simulation (chaine de montagne, nuages, champ potentiels) ces pointeurs sont gérées en interne. Le ciel peut être construit après le calcul des potentiels car il est construit dans l'initialisation du systeme.[Question P10.2] Quelle est la bonne façon de le faire dans un cadre de programmation orientée-objets ?Il avoir une methode dans le système qui initialise le champ potentiels puis qui construise les nuages avec le champ potentiels inititialisé.[Question P10.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ?La difficulté des classe contenant des pointeurs est la copie. Il faut faire attention à la copie profonde, car l'operateur = et le constructeur de copie ne peuvent pas la gérer par défaut. Il faut a ce moment la les définir si on en a besoin ou les suprimer si copier la copie de la classe ne fait pas partie de la conception du programme.[Question P10.4] Pourquoi fait-on cela ? A quoi sert de «delete» ces deux méthodes ?On le fait pour éviter la copie comme expliqué à la question 10.3. On «delete» ces methode pour ne pas les avoir par défaut et ainsi éviter la copie de surface qui n'est pas nécéssaire.[Question P10.5] Qu'est ce que cela implique dans votre conception ?On aura un "vector" de pointeurs sur des dessinables pour pouvoir dessiner chaque element du système grâce au polymorphisme sur une collection hétérogène.[Question P12.1] Comment représentez vous ces nouveaux objets «chaînes de montagnes» ? Où s'incrivent-ils dans votre conception ? Quelle(s) classe(s) avez vous ajoutée(s) ? Cela change-t-il quelques choses aux montagnes que vous avez conçues jusqu'ici ? [Question P14.1] Comment (à quel degré / quel niveau ?) avez-vous intégré les couleurs dans votre projet ? La couleur est gérée dans ce projet directement dans les classes de dessin 3D. Nous n'avons donc pas défini de classe couleur. En effet, celle-ci ne nous semblait pas pertinente étant donné que les nuances de couleur pour un objet vont au dela de la couleur seule. Par exemple la couleur de la montagne change en dégradé avec la hauteur (plus a jour, maintenant c'est les terrains qui dessinent la montagne, mais le probleme reste le même avec la vegetation) donc il aurait fallu compliquer la classe couleur pour lui permettre de gérér le changement continu d'une couleur ou donner à cette classe la couleur codée en RVB (ou autre) ce qui en aurait fait une classe compliquée dans laquelle nous redéfinissons des fonctionalités existantes sans les simplifier et sans grand intêret à l'echelle globale du projet.[Question P18.1] Quel est l'ensemble des balises que vous utilisez ?
+
+On utilise les balises suivantes:
+	<Application>
+	<Systeme3D>
+	<montagne>
+	<ChampPotentiels>
+	<rivers3D>
+	<chaine_mont>
+	<riviere3D>
+	<Proprietes>
+	<terrain3D>
+[Question P18.2] Quel prototype proposez-vous pour la méthode «extraire» ?
+Chez nous il n'y a pas de méthode extraire car on avait besoin que presque toutes les classes soient définies explicitement dans le systeme pour qu'il puisse acceder à leurs méthodes. Une méthode extraire enverrait les pointeurs sur les dessinables ce qui n'est pas souhaité et ne peut pas être géré par le système.

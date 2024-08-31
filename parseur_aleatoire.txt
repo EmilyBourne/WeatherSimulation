@@ -1,0 +1,14 @@
+<Application>
+	<Systeme3D>
+		<ChampPotentiels>
+			<epsilon>
+				0.1
+			</epsilon>
+		</ChampPotentiels>
+		<terrain3D>
+			<rocheux>
+				0.6
+			</rocheux>
+		</terrain3D>
+	</Systeme3D>
+</Application>

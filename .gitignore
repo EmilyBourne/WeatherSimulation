@@ -1,0 +1,17 @@
+*.o
+Application
+testChaines
+testCubedAir
+testDessinable
+testLaplacien
+testMontagne
+testMontagneLue
+testNuageEvolution
+testNuages
+testParseur
+testPotentiel
+testPotentiels
+testRiviere
+testSysteme
+testTerrain
+testVecteur2D

@@ -1,0 +1,97 @@
+<Application>
+	<Systeme3D>
+		<Proprietes>
+			<v_infinie>
+				20.0
+			</v_infinie>
+			<T_infinie>
+				284.5
+			</T_infinie>
+			<P_infinie>
+				101325.0
+			</P_infinie>
+			<nx>
+				30
+			</nx>
+			<ny>
+				30
+			</ny>
+			<nz>
+				30
+			</nz>
+			<lambda>
+				20/29
+			</lambda>
+		</Proprietes>
+		<montagne>
+			<arguments>
+				15.0 15.0 18.0 5.0 10.0
+			</arguments>
+		</montagne>
+		<montagne>
+			<centreX>
+				2.0
+			</centreX>
+			<centreY>
+				2.0
+			</centreY>
+			<hauteur>
+				40.0
+			</hauteur>
+			<etalementX>
+				1.0
+			</etalementX>
+			<etalementY>
+				0.5
+			</etalementY>
+		</montagne>
+		<chaine3D>
+			<arguments>
+				"random.mont" 1.5
+			</arguments>
+		</chaine3D>
+		<chaine3D>
+			<fichier>
+				"random.mont"
+			</fichier>
+			<zscale>
+				1.5
+			</zscale>
+		</chaine3D>
+		<chaine3D>
+			<arguments>
+				9 28 29 1 1 false
+			</arguments>
+		</chaine3D>
+		<chaine3D>
+			<list>
+				12 18 29 1 10 3 7 4 23 17
+			</list>
+			<verbeuse>
+				false
+			</verbeuse>
+		</chaine3D>
+		<!--<ChampPotentiels><arguments> 0.1 1*10^-4 3000 false </arguments> </ChampPotentiels>-->
+		<ChampPotentiels>
+			<epsilon> 0.1 </epsilon>
+			<errmax> 1*10^-4 </errmax>
+			<intmax> 3000 </intmax>
+			<verbeuse> false </verbeuse>
+		</ChampPotentiels>
+		<riviere3D></riviere3D>
+		<riviere3D>
+			<arguments> 23 5 </arguments>
+			</riviere3D>
+		<riviere3D>
+		<debutx>
+		3</debutx>
+		<debuty>17</debuty>
+		</riviere3D>
+		<rivers3D></rivers3D>
+		<rivers3D><arguments>2</arguments></rivers3D>
+		<rivers3D><arguments>15 15 false </arguments> </rivers3D>
+		<rivers3D><list> 13 12 </list> </rivers3D>
+		<rivers3D><n>1 </n> <verbeuse> true </verbeuse> </rivers3D>
+		<terrain3D> <rocheux> 0.6 </rocheux> </terrain3D>
+	</Systeme3D>
+</Application>

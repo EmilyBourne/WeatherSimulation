@@ -1,0 +1,104 @@
+UTILISATION DU PROJET:
+
+Pour utiliser notre programme ouvrir le fichier parseurvide.txt et sauvegarde le avec le nom que vous voulez dans le dossier projet. Editer tous les valeurs que vous avez envie d'editer et ajouter tous les méthodes que vous avez envie d'ajouter en suivant les modèles décrit dessous. Autrement vous pouvez choisir un des fichiers parseur qu'on a fourni. Ecrire le nom de votre fichier dans le fichier parseurnom.txt. Rassurer vous qu'il ne reste rien dans ce fichier à part le nom (y compris les espaces et les nouveaux lignes). Puis lancer l'application.
+
+DEFINITION DES CLASSES DANS LE PARSEUR:
+PROPRIETES:
+Déclaré par: <Proprietes>
+Vous avez la choix de définir les constantes qui se trouvent dans les proprietes si vous voulez. Vous n'êtes pas obligés de tout définir, mais uniquement celles que vous voulez modifier. Ces constantes sont définies par une balise contenant leur nom suivi par leur valeur.
+Par exemple:
+	<v_infinie>
+		20.0
+	</v_infinie>
+ou bien:
+	<lambda>20/29</lambda>
+
+Les noms des constantes dans les proprietes sont:
+	v_infinie
+	T_infinie
+	P_infinie
+	nx
+	ny
+	nz
+	lambda
+
+MONTAGNE:
+Déclaré par: <montagne>
+Il y a deux méthodes de définir les montagnes. Soit vous les définissez comme dans les proprietes en utilisant les noms des arguments suivants:
+	centreX
+	centreY
+	hauteur
+	etalementX
+	etalementY
+
+ou bien, vous utilisez la balise <arguments> suivi par 5 doubles qui répresent les arguments données au-dessus mais il faut faire attention car ces valeurs doivent être définies dans le bon ordre.
+
+CHAINE_MONT:
+Déclaré par: <chaine_mont>
+Il y a cinq méthodes pour définir les chaines de montagnes:
+1) Vous définissez chaque argument. Les arguments possibles sont:
+	list
+	verbeuse
+Vous n'êtes pas obligés de mettre le booléen verbeuse, il ne sert plus à rien dans le parseur.
+Le list est une liste de doubles qui sont les arguments pour les montagnes qui se trouvent dans cette chaine. Ils sont définis comme dans la balise <montagne>, mais ce n'est pas possible de les lister explicitement avec les noms de leurs arguments. Le nombre de doubles que vous donnez devrait être un multiple de 5.
+
+2) Vous pouvez aussi utiliser la balise <arguments> suivie par les arguments données au dessus. Encore une fois ce n'est pas obligé de mettre le booléen.
+
+3) Ici, comme dans méthode 1 vous définissez chaque argument. Mais cette fois-ci, les arguments ont les noms suivants:
+	fichier
+	zscale
+Le fichier est le  nom d'un fichier qui contient l'information pour décrire une montagne. On vous a fourni plusieurs montagnes à lire qui sont les fichiers .mont . Le nom doit être écrit entre guillemets.
+Il n'est pas obligatoire de définir le zscale, mais ceci sert à mettre la montagne à l'échelle. Donc si vous avez une montagne qui dépasse de la boîte en hauteur ou une montagne qui est très petite vous pouvez regler son échelle en faisant sa hauteur fois le scalaire donné. L'utilité de ceci est mis en évidence par la méthode 5.
+
+4) Cet méthode marche comme le méthode 2 pour les arguments dans la méthode 3 en utilisant la balise <arguments>. Encore une fois vous n'êtes pas obligé de définir le zscale et le nom du fichier à besoin d'être entre guillemets.
+
+5) Pour générer une chaine de montagnes aléatoires, il ne faut rien écrire entre les balises. Par exemple <chaine_mont></chaine_mont>
+   Si vous aimez la montagne générée et vous voulez la stocker, trouvez le fichier random.mont et sauvegardez le avec un autre nom. Votre montagne est définie dans ce fichier et peut être lue en utilisant la méthode 3 ou 4.
+
+CHAMPPOTENTIELS:
+Déclaré par: <ChampPotentiels>
+Il y a deux méthodes de définir les ChampPotentiels. Soit vous les définissez comme dans les proprietes en utilisant les noms des arguments suivants:
+	epsilon
+	errmax
+	intermax
+	verbeuse
+Vous n'êtes pas obligés de tout définir, mais uniquement celles que vous voulez modifier. Il est optimal d'utiliser la valeur 0.3 pour epsilon, cette valeur permet la convergence la plus rapide du calcul des laplaciens, mais avec une plus grande valeur les calculs divergent.
+
+Autrement, vous utilisez la balise <arguments> suivie par 2 doubles, 1 int et un booléen, qui répresent les arguments données au-dessus mais il faut faire attention car ces valeurs doivent être définies dans le bon ordre. Il est permis de ne pas définir certaines valeurs mais il faut toujours définir epsilon  et si vous choissisez de définir intermax, alors vous êtes aussi obligé de définir l'errmax.
+
+RIVIERE3D
+Déclaré par: <riviere3D>
+Il y a trois méthodes de définir les rivieres:
+1) Vous définissez leur arguments comme dans les proprietes en utilisant les noms des arguments suivants:
+	debutx
+	debuty
+
+2) Vous utilisez la balise <arguments> suivie par les arguments données au dessus.
+
+3) Pour générer les rivieres aléatoires, c'est à dire, qui décide eux-même d'où ils partent, il ne faut rien écrire entre les balises.
+
+RIVERS3D
+Déclaré par: <rivers3D>
+Il y a cinq méthodes de définir les rivieres:
+1) Vous définissez chaque argument. Les arguments possibles sont:
+	list
+	verbeuse
+Vous n'êtes pas obligés de mettre le booléen verbeuse, il ne sert plus à rien dans le parseur.
+Le list est une liste de doubles qui sont les arguments pour les rivieres qui se trouvent dans cette chaine. Ils sont définis comme dans la balise <riviere>, mais ce n'est pas possible de les lister explicitement avec les noms de leurs arguments. Le nombre de doubles que vous donnez devrait être un multiple de 2.
+
+2) Vous pouvez aussi utiliser la balise <arguments> suivie par les arguments données au dessus. Encore une fois ce n'est pas obligé de mettre le booléen.
+
+3) Ici, comme dans méthode 1 vous définissez chaque argument. Mais cette fois-ci, les arguments ont les noms suivants:
+	n
+	verbeuse
+
+Vous n'êtes pas obligés de mettre le booléen verbeuse, il ne sert plus à rien dans le parseur.
+n est le nombre de rivières qui commencent dans les endroits aléatoires. 
+
+4) Cet méthode marche comme le méthode 2 pour les arguments dans la méthode 3 en utilisant la balise <arguments>. Encore une fois vous n'êtes pas obligé de définir le verbeuse.
+
+5) Pour générer une nombre aléatoire de rivières qui commence dans les endroits aléatoires, il ne faut rien écrire entre les balises.
+
+TERRAIN3D
+Déclaré par: <terrain3D>
+Le terrain n'a qu'un argument à définir. Il est déclaré par la balise <rocheux> Il faut lui donner un double qui donne la hauteur de partir de laquelle il n'y a plus que des terrains rocheux. Ce double est un pourcentage de la hauteur de la boite.

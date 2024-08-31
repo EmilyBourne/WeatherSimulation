@@ -1,0 +1,19 @@
+<Application>
+	<Systeme3D>
+		<montagne>
+			<arguments>
+				15.0 15.0 15.0 5.0 5.0
+			</arguments>
+		</montagne>
+		<ChampPotentiels>
+			<epsilon>
+				0.1
+			</epsilon>
+		</ChampPotentiels>
+		<terrain3D>
+			<rocheux>
+				0.4
+			</rocheux>
+		</terrain3D>
+	</Systeme3D>
+</Application>

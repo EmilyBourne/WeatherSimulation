@@ -1,0 +1,81 @@
+Journal - Emily
+
+Semaine commençant:
+18/02/2013
+Présentation du projet : Le projet a l’air assez compliqué. Pour l’instant je ne sais pas comment on va le réaliser mais il me semble que les taches sont bien divisées pour qu’on va pouvoir savoir comment faire.
+
+25/02/2013
+Cette semaine il n’y a qu’un exercice. J’ai déjà trouvé un binôme et vu qu’on a noté qu’il y a beaucoup d’exercices la semaine prochaine on a décidé que David peut prendre un avance en faisant les montagnes pendant que moi je fasse les Vecteurs2D. On a aussi décidé de commencer le Makefile dès cette semaine afin de ne pas devoir tous refaire quand on l’introduit. Je n’ai pas trouvé les exercices très difficiles cette semaine, mais j’avais un petit problème avec le carré de la norme. En fait j’avais mal-lu les consignes et je croyais que il fallait faire la multiplication du vecteur par lui-même. Ce qui n’est pas possible.
+
+04/03/2013
+Cette semaine, moi j’ai repris les Vecteurs 2D car je suis déjà habitué au code. Je n’avais pas trop de problèmes avec le surcharge des opérateurs mais j’ai trouvé le " << " opérateur difficile à gérer parce que je n’avais pas complètement compris les ostream. J’avais un peu plus de difficulté avec le constructeur, mais je crois que j’ai réussi à le faire.
+
+11/03/2013
+J’ai fait les nuages cette semaine. J’ai relu tous les codes que David a fait qui sont contenus dans "nuages" pour bien savoir comment les implémenter. J’avais des problèmes avec le fichier namespace "Physique". Je ne connaissais pas comment définir les valeurs que j’avais déclaré dans le namespace. J’ai demandé à plusieurs assistants, mais ils ne connaissaient pas non plus. Enfin j’ai réussi à trouver l’outil "extern" qui me permet de définir les valeurs dans un .cc fichier.
+J'ai aussi un problème avec les valeurs car ça me donnait les nuages partout, même à l’intérieur de la montagne.
+
+18/03/2013
+Cette semaine j'ai continué avec les nuages pour essayer de trouver la faute qui me donnait les nuages partout. Après d’avoir relu tous le code bien, on avait découvert que mon valeur pour v à l’infinie était la mauvaise valeur.
+
+01/04/2013
+Pendant les vacances j'ai rattrapé le retard de la semaine dernier en faisant l'exercice "dessinable". Au début j'avais du mal à comprendre les données. Je croyais qu'il fallait surcharger l'opérateur "<<", mais en relisant les données j'ai compris ce qu'il fallait faire et j'ai réussi à le faire sans trop de difficulté.
+
+08/04/2013
+Cette semaine j'ai fait l'exercice "Plus de Montagnes". J'avais quelques problèmes avec la conception parce que je voulais faire un tableau de pointeurs qui point sur la classe lui-même. Après j'ai décidé que ce serait plus facile de créer une super classe avec 2 sous classes. Un qui pointe sur l'autre, et l'autre la montagne de base. Une fois ceci fait, je n'avais plus trop de difficultés.
+
+22/04/2013
+J'ai regardé le déplacement des nuages. J'avais des problèmes pour trouver la case précédente et j'avais oublié que les nuages ne sont pas définis aux bornes, du coup j'avais les segmentation faults. Mais quand je me suis rendue compte, j'ai pu gérer les fautes assez rapidement. Mais j'ai toujours un autre problème qui fait que mes nuages se dissipent au lieu de se déplacer.
+
+29/04/2013
+J'ai réussi à trouver la faute dans le déplacement des nuages. Maintenant ils bougent normalement. J'ai commencé de regarder les terrains, mais je n'ai pas très bien compris les données, ni les éléments aléatoires. Je voulais faire une classe random, mais je n'arrivais pas à stocker la graine. Je crois que j'ai réussi à comprendre l'idée de comment les terrains devraient s'initialiser, mais je vais demander à mon binôme pour le random.
+
+06/05/2013
+Cette semaine j'ai décidé d'ajouter des rivières au projet. J'avais plusieurs problèmes de conception, mais j'ai réussi à m'en sortir.
+
+13/05/2013
+Ce weekend j'ai passé plus de 17 heures sur le parseur. Il y avait plein de problèmes, mais il me semble qu'il marche maintenant. J'ai fait plusieurs tests et mes fautes ne se trouvent que dans les fichiers que le parseur lit maintenant. 
+
+20/05/2013
+Cette semaine j'ai essayé de régler les fautes qui restent et j'ai vérifié que tous mes fichiers sont complet et à jour.
+
+
+
+Journal - David
+26.02.2013- Début du projet. Création de la classe Montagne. Tout va bien.
+
+
+
+
+05.03.2013- Début de la classe ChampPotentiels. Potentiel crée. Il manque la forme finale du Champ, les initialisations et le calcul des potentiels
+
+
+
+12.03.2013- Suite de la classe ChampPotentiels. Initialisations faites. Petit problème au niveau des laplaciens.
+
+
+
+19.03.2013- Fin de la classe ChampPotentiels. Problème des laplaciens corrigé, resolution du calcul des potentiels et calcul du vent. Tout fonctionne.
+
+
+
+26.3.2013- Début de la classe système. Je ne vois pas encore bien comment le mettre en forme.
+
+
+
+09.4.2013- Suite de la classe système. Je me rend compte que la forme du systeme sera très influencée par la 3D et la simulation en temps réel.
+
+
+
+23.4.2013- Début de la 3D. Suivi des tutoriels OpenGL et wxWidget
+
+
+
+30.4.2013- Suite de la 3D. Classe chaines3D pour afficher les montagnes et classe nuages3D pour les nuages.
+
+
+
+07.4.2013- Classe montagne_lue. J'ai décidé de lui ajouter en plus un générateur de montagnes aléatoires suivant l'algoritme de diamant-carré vu sur wikipédia
+
+
+
+14.05.2013- Ajout de l'évolution des nuages avec la simulation 3D, classe terrain et terrain 3D.
